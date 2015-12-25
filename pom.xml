@@ -23,14 +23,14 @@
 			<artifactId>gson</artifactId>
 			<version>1.7.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/resources/gson-1.7.2.jar</systemPath>
+			<systemPath>${ideamart.lib}/gson-1.7.2.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>hms</groupId>
 			<artifactId>sdp.app.api</artifactId>
 			<version>1.0.11-SNAPSHOT</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/resources/sdp.app.api-1.0.11-SNAPSHOT.jar</systemPath>
+			<systemPath>${ideamart.lib}/sdp.app.api-1.0.11-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
