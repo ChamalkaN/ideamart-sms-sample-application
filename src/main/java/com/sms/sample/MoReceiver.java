@@ -60,7 +60,7 @@ public class MoReceiver implements MoSmsListener
     {
 
         String message = moSmsReq.getMessage();
-        LOGGER.log(Level.ALL, "New message reviced " + moSmsReq.getMessage());
+        LOGGER.log(Level.ALL, "New message received " + moSmsReq.getMessage());
         String responseMessage = findGender(message);
 
         MtSmsReq mtSmsReq = new MtSmsReq();
