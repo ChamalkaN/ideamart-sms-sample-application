@@ -25,7 +25,7 @@
  *     with Genix Ventures.
  */
 
-package com.sms.sample;
+package com.ideamart.sms.sample;
 
 import hms.kite.samples.api.SdpException;
 import hms.kite.samples.api.sms.MoSmsListener;
@@ -38,11 +38,6 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-//
-// IMPORTS
-// NOTE: Import specific classes without using wildcards.
-//
 
 public class MoReceiver implements MoSmsListener
 {
@@ -60,17 +55,19 @@ public class MoReceiver implements MoSmsListener
     {
 
         String message = moSmsReq.getMessage();
-        LOGGER.log(Level.ALL, "New message received " + moSmsReq.getMessage());
+        LOGGER.log(Level.ALL, "new message received " + moSmsReq.getMessage());
         String responseMessage = findGender(message);
 
         MtSmsReq mtSmsReq = new MtSmsReq();
         mtSmsReq.setMessage(responseMessage);
         mtSmsReq.setApplicationId(moSmsReq.getApplicationId());
+        //:TODO: password should be replaced with your IdeaMart password
         mtSmsReq.setPassword("password");
         mtSmsReq.setDestinationAddresses(Arrays.asList(moSmsReq.getSourceAddress()));
 
         try
         {
+            //:TODO: URL should be replaced with below url when you host this application
             requestSender = new SmsRequestSender(new URL("http://127.0.0.1:7000/sms/send"));
             requestSender.sendSmsRequest(mtSmsReq);
         }

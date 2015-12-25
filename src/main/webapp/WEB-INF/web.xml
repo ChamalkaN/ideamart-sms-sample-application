@@ -10,7 +10,7 @@
 		<servlet-class>hms.kite.samples.api.sms.MoSmsReceiver</servlet-class>
 		<init-param>
 			<param-name>smsReceiver</param-name>
-			<param-value>com.sms.sample.MoReceiver</param-value>
+			<param-value>com.ideamart.sms.sample.MoReceiver</param-value>
 		</init-param>
 	</servlet>
 
