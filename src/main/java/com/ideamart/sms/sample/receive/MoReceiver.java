@@ -1,36 +1,23 @@
 /*
- * FILENAME
- *     MoReceiver.java
+ *Copyright 2015 Tharinda Dilshan Ehelepola
  *
- * FILE LOCATION
- *     $Source$
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * VERSION
- *     $Id$
- *         @version       $Revision$
- *         Check-Out Tag: $Name$
- *         Locked By:     $Lockers$
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * FORMATTING NOTES
- *     * Lines should be limited to 78 characters.
- *     * Files should contain no tabs.
- *     * Indent code using four-character increments.
- *
- * COPYRIGHT
- *     Copyright (C) 2007 Genix Ventures Pty. Ltd. All rights reserved.
- *     This software is the confidential and proprietary information of
- *     Genix Ventures ("Confidential Information"). You shall not
- *     disclose such Confidential Information and shall use it only in
- *     accordance with the terms of the licence agreement you entered into
- *     with Genix Ventures.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.ideamart.sms.sample.receive;
 
 import com.ideamart.sms.sample.operations.Operations;
-import com.ideamart.sms.sample.send.SendMessage;
 import hms.kite.samples.api.sms.MoSmsListener;
-import hms.kite.samples.api.sms.SmsRequestSender;
 import hms.kite.samples.api.sms.messages.MoSmsReq;
 
 public class MoReceiver implements MoSmsListener {
@@ -44,10 +31,7 @@ public class MoReceiver implements MoSmsListener {
 
         String message = moSmsReq.getMessage();
         Operations operations = new Operations(message);
-        operations.passToDatabase();
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.SendMessage("Your Message Saved",moSmsReq.getApplicationId(),moSmsReq.getSourceAddress()
-        ,"psasword","http://127.0.0.1:7000/sms/send");
+        operations.passToDatabase(moSmsReq);
     }
 
 }

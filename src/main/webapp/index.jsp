@@ -6,8 +6,8 @@
 <body>
 <h2>Simple SMS Application!</h2>
 <%
-    HashMap map = dbClass.map;
-    if(map.size()!=0) {
+    HashMap map = dbClass.getDBInstance();
+    if(!map.isEmpty()) {
         out.print("name"+" "+"message");
         out.print("<br>");
         Set<Map.Entry<String, String>> entrySet = map.entrySet();
