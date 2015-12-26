@@ -1,11 +1,12 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Set" %>
+<%@ page import="com.ideamart.sms.sample.db.dbClass" %>
 <html>
 <body>
 <h2>Simple SMS Application!</h2>
 <%
-    HashMap map = com.ideamart.sms.sample.DB.DBClass.getDBInstance();
+    HashMap map = dbClass.getDBInstance();
     if(!map.isEmpty()) {
         out.print("name"+" "+"message");
         out.print("<br>");
