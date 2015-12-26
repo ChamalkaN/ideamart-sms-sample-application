@@ -15,7 +15,7 @@
  */
 package com.ideamart.sms.sample.operations;
 
-import com.ideamart.sms.sample.db.dbClass;
+import com.ideamart.sms.sample.DB.DBClass;
 import com.ideamart.sms.sample.send.SendMessage;
 import hms.kite.samples.api.sms.messages.MoSmsReq;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ public class Operations {
     public void passToDatabase(MoSmsReq moSmsReq) {
         String [] messageParts = message.split(" ");
         if(messageParts.length == 3) {
-            map = dbClass.getDBInstance();
+            map = DBClass.getDBInstance();
             map.put(messageParts[1], messageParts[2]);
             SendMessage sendMessage = new SendMessage();
             //:TODO: Password and URL should be replaced when you hosting the application
